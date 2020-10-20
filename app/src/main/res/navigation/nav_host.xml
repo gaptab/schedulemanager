@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/projectsFragment">
+
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.sergiobelda.androidtodometer.ui.task.TasksFragment"
+        android:label="tasks_fragment"
+        tools:layout="@layout/tasks_fragment" >
+        <action
+            android:id="@+id/navToTask"
+            app:destination="@id/taskFragment" />
+        <action
+            android:id="@+id/navToAddTask"
+            app:destination="@id/addTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectsFragment"
+        android:name="com.sergiobelda.androidtodometer.ui.project.ProjectsFragment"
+        android:label="projects_fragment"
+        tools:layout="@layout/projects_fragment" >
+        <action
+            android:id="@+id/navToProject"
+            app:destination="@id/projectFragment" />
+        <action
+            android:id="@+id/navToAddProject"
+            app:destination="@id/addProjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.sergiobelda.androidtodometer.ui.task.TaskFragment"
+        android:label="task_fragment"
+        tools:layout="@layout/task_fragment" >
+        <argument
+            android:name="taskId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/navToEditTaskFragment"
+            app:destination="@id/editTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="com.sergiobelda.androidtodometer.ui.task.EditTaskFragment"
+        android:label="edit_fragment"
+        tools:layout="@layout/edit_task_fragment" >
+        <argument
+            android:name="taskId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectFragment"
+        android:name="com.sergiobelda.androidtodometer.ui.project.ProjectFragment"
+        android:label="project_fragment"
+        tools:layout="@layout/project_fragment" >
+        <argument
+            android:name="projectId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/navToEditProjectFragment"
+            app:destination="@id/editProjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProjectFragment"
+        android:name="com.sergiobelda.androidtodometer.ui.project.EditProjectFragment"
+        android:label="EditProjectFragment"
+        tools:layout="@layout/edit_project_fragment">
+        <argument
+            android:name="projectId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.sergiobelda.androidtodometer.ui.about.AboutFragment"
+        android:label="about_fragment"
+        tools:layout="@layout/about_fragment" />
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.sergiobelda.androidtodometer.ui.task.AddTaskFragment"
+        android:label="add_task_fragment"
+        tools:layout="@layout/add_task_fragment" />
+    <fragment
+        android:id="@+id/addProjectFragment"
+        android:name="com.sergiobelda.androidtodometer.ui.project.AddProjectFragment"
+        android:label="AddProjectFragment"
+        tools:layout="@layout/add_project_fragment" />
+</navigation>
